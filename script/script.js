@@ -1,5 +1,7 @@
 "use strict"
 
+
+
 /*PROMO-SLIDER*/
 
 function promoSliderProceed(element){
