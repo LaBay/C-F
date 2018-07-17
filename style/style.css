@@ -68,6 +68,9 @@ header {
   text-align: center; }
   .logo h2 {
     font-size: 34.87px; }
+    .logo h2 a {
+      text-decoration: none;
+      color: inherit; }
     .logo h2 span {
       font-family: "Rajdhani Bold"; }
   .logo h3 {
@@ -79,7 +82,7 @@ header {
     background-color: black;
     border: none;
     margin-bottom: 5px; }
-  .logo a {
+  .logo .confira {
     margin-top: 40px;
     display: inline-block;
     width: 116px;
@@ -98,17 +101,21 @@ header {
   text-align: center;
   color: white;
   font-size: 13.21px; }
+  .promo-slider a {
+    text-decoration: none;
+    color: inherit; }
   .promo-slider .active-item {
     display: block;
     opacity: 1;
-    transition: opacity 0.7s; }
+    letter-spacing: 0px;
+    transition: letter-spacing 0.7s; }
 
 .promo-slider-item {
   text-transform: uppercase;
   height: 0px;
   margin: auto;
   opacity: 0;
-  transition: opacity 0.3s; }
+  letter-spacing: -2px; }
   .promo-slider-item span {
     font-weight: bold; }
 
@@ -128,7 +135,8 @@ header {
   border-radius: 50%;
   box-sizing: border-box;
   border: 1px solid black;
-  cursor: pointer; }
+  cursor: pointer;
+  transition: background-color 0.5s; }
 
 .slider-wrapper {
   height: 705px; }
@@ -178,7 +186,8 @@ nav {
     font-size: 20px;
     text-decoration: none;
     color: inherit;
-    transition: 0.5s; }
+    transition: 0.5s;
+    text-align: center; }
     nav .fa-bars:hover {
       transform: rotate(180deg); }
   nav h1 {

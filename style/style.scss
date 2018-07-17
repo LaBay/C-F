@@ -108,6 +108,11 @@ header{
 	
 	h2{
 		font-size: 34.87px;
+		
+		a{
+			text-decoration: none;
+			color: inherit;
+		}
 
 		span{
 			font-family: "Rajdhani Bold";
@@ -127,7 +132,7 @@ header{
 		margin-bottom: 5px;
 	}
 
-	a{	
+	.confira{	
 		margin-top: 40px;
 		display: inline-block;
 		width: 116px;
@@ -149,10 +154,16 @@ header{
 	color: white;
 	font-size: 13.21px;
 
+	a{
+		text-decoration: none;
+		color: inherit;
+	}
+
 	.active-item{
 		display: block;
 		opacity: 1;
-		transition: opacity 0.7s;
+		letter-spacing: 0px;
+		transition: letter-spacing 0.7s;	
 	}
 }
 
@@ -161,7 +172,7 @@ header{
 	height: 0px;
 	margin: auto;
 	opacity: 0;
-	transition: opacity 0.3s;
+	letter-spacing: -2px;
 	
 	span{
 		font-weight: bold;
@@ -188,6 +199,7 @@ header{
 	box-sizing: border-box;
 	border: 1px solid black;
 	cursor: pointer;
+	transition: background-color 0.5s;
 }
 
 .slider-wrapper{
@@ -249,6 +261,7 @@ nav{
 		text-decoration: none;
 		color: inherit;
 		transition: 0.5s;
+		text-align: center;
 
 		&:hover{
 			transform: rotate(180deg);

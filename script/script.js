@@ -4,33 +4,39 @@
 
 /*PROMO-SLIDER*/
 
-function promoSliderProceed(element){
+function proceed($element){
+  var $items = $('.promo-slider-item');
+  var $dots = $('.promo-slider-dot');
+  var i;
+  if($element){
+    i = $dots.index($($element));
+    console.log(i)
+  }else{
+    i = $items.index($('.active-item'));
+    if (i < $items.length - 1) i ++ 
+      else i = 0 
+  }
 
-	var $sliderDots = $('.promo-slider-dot');
-	var $indexDot = $sliderDots.index($(element));;
-	
-	$sliderDots.each(function(){
-		if($sliderDots.index(this) == $indexDot) $(this).addClass('active-dot')
-			else $(this).removeClass('active-dot')
-	});
+  $items.each(function(){
+    $(this).removeClass('active-item')
+  });
 
-	var $elements = $('.promo-slider-item');
+  $dots.each(function(){
+    $(this).removeClass('active-dot')
+  });
 
-	$elements.each(function(){
-		if($elements.index(this) == $indexDot) $(this).addClass('active-item')
-			else $(this).removeClass('active-item')
-	});
+  $($items[i]).addClass('active-item');
+  $($dots[i]).addClass('active-dot');
+}
 
-};
 
-$('.promo-slider-dot').click(function(){
-	promoSliderProceed(this)
-})
+$('.promo-slider-dot').click(function(){//change by click
+  proceed($(this));
+});
 
-/*setInterval(function(){
-	promoSliderProceed(null, true)
-	console.log('run')
-}, 3000);*/
+setInterval(function(){//autoplay
+  proceed();
+}, 6000);
 
 
 /* SLIDER */
