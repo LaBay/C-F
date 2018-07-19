@@ -149,6 +149,7 @@
     cursor: pointer;
     border-radius: 50%;
 }
+
 .slick-dots li button
 {
     font-size: 0;
@@ -167,6 +168,19 @@
     outline: none;
     background: transparent;
 }
+
+@media screen and (max-width: 768px) {
+    .slick-dots li{ 
+        width: 11px;
+        height: 11px;
+    }
+
+    .slick-dots li button{
+        width: 11px;
+        height: 11px;
+    }
+}
+
 .slick-dots li button:hover,
 .slick-dots li button:focus
 {

@@ -8,6 +8,7 @@ function proceed($element){
   var $items = $('.promo-slider-item');
   var $dots = $('.promo-slider-dot');
   var i;
+  
   if($element){
     i = $dots.index($($element));
     console.log(i)
@@ -35,7 +36,7 @@ $('.promo-slider-dot').click(function(){//change by click
 });
 
 setInterval(function(){//autoplay
-  proceed();
+  proceed(false);
 }, 6000);
 
 
@@ -59,7 +60,23 @@ $(document).ready(function(){
   $(".owl-carousel").owlCarousel({
   	nav: true,
   	navContainer: '.carousel',
-  	items: 6,
+    responsiveBaseElement: '.carousel-wrapper',
+    responsiveRefreshRate: 200,
+    responsiveClass: true,
+    responsive:{
+      0: {
+        items: 1,
+      },
+      320: {
+        items: 6,
+       // margin: 7,
+      },
+      768: {
+        items: 6,
+      }
+    },
+
+  	
   	loop: true,
   	autoplay: true,
   	autoplayHoverPause: true,

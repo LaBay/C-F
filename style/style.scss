@@ -1,7 +1,4 @@
-/*TABLET*/
-@media screen and(max-width: 768px) {
-	
-}
+
 /*PHONE*/
 @media screen and(max-width: 320px) {
 	
@@ -29,12 +26,27 @@
 
 @keyframes modal_menu_animation{
 	from{width: 0; opacity: 0;}
-	to{width: 595px; opacity: 1;}
+	/* @media screen and (min-width: 769px) {
+		to{width: 595px; opacity: 1;}
+	} */
+
+	@media screen and (max-width: 768px) {
+		to{width: 280px; opacity: 1;}
+	}
+	// @media screen and (max-width: 320px) {
+	// 	to{width: 595px; opacity: 1;}
+	// }
+	
 }
 
 @keyframes modal_menu2_animation{
 	from{height: 0; opacity: 0;}
-	to{height: 660px; opacity: 1;}
+	/* @media screen and (min-width: 769px) {
+		to{height: 660px; opacity: 1;}
+	} */
+	@media screen and (max-width: 768px) {
+	to{height: 530px; opacity: 1;}
+	}
 }
 
 @mixin h2-bigarrow{
@@ -141,6 +153,11 @@ header{
 		text-decoration: none;
 		font-size: 24.81px;
 		border: 1px solid black;
+		transition: letter-spacing 0.3s;
+
+		&:hover{
+			letter-spacing: 2px;
+		}
 	}
 }
 
@@ -149,7 +166,6 @@ header{
 	height: 21px;
 	line-height: 21px;
 	background-color: #c5c5c5;
-	line-height: 21px;
 	text-align: center;
 	color: white;
 	font-size: 13.21px;
@@ -634,16 +650,14 @@ nav{
 	}
 }
 
-/*SECTION FEATURES "PRODUTOS EM DESTAQUE"*/
+/*SECTION FEATURES "PRODUTOS EM DESTAQUE" */
 
 
 .features{
 	margin: auto;
 	max-width: 1600px;
 	padding-top: 30px;
-	background-image: url('../backgrounds/divisioria.png');
-	background-repeat: no-repeat;
-	background-position:  center 470px;
+
 
 	h2{	
 		width: 400px;
@@ -652,107 +666,65 @@ nav{
 }
 
 .carousel{
+	margin: 30px auto;
 	position: relative;
-	width: 1190px;
-	margin: 25px auto;
+	max-width: 1200px;
 }
 
 /*nav button carousel style*/
 
 .owl-prev, .owl-next{
 	position: absolute;
+	display: block;
+	box-sizing: border-box;
+	height: 10px;
+	width: 10px;
 	top: 40%;
-	border: none;
+	border-right: 2px solid #d1d1d1;
+	border-bottom: 2px solid #d1d1d1;
+	border-left: none;
+	border-top: none;
 	background-color: transparent;
 	z-index: 10;
-	color: #d1d1d1;
-	font-size: 50px;
+	color: transparent;
 	outline: none;
 	cursor: pointer;
-	transition: 0.5s;
+	transition: 0.3s;
 
 	&:hover{
-		color: black;
+		border-color: black;
 	}
 }
 
 .owl-prev{
 	left: -15px;
+	transform: rotate(135deg);
 }
 
 .owl-next{
 	right: -15px;
+	transform: rotate(315deg);
 }
 /*************************/
 
 .carousel-wrapper{
 	margin: auto;
 	display: flex;
+	justify-content: center;
+	padding-bottom: 20px;
 }
 
 .carousel-item{
-	width: 185px;
-	margin: auto;
-
-	p{
-		margin-top: 5px;
-		font-size: 14.41px;
-		color: #000;
-		text-align: center;
-	}
-}
-
-.carousel-item__1{
-	.carousel-item-img{
-		background-image: url('../images/goodssmall1.jpg');
-	}
-}
-
-.carousel-item__2{
-	.carousel-item-img{
-		background-image: url('../images/goodssmall2.jpg');
-	}
-}
-
-.carousel-item__3{
-	.carousel-item-img{
-		background-image: url('../images/goodssmall3.jpg');
-	}
-}
-
-.carousel-item__4{
-	.carousel-item-img{
-		background-image: url('../images/goodssmall4.jpg');
-	}
-}
-
-.carousel-item__5{
-	.carousel-item-img{
-		background-image: url('../images/goodssmall5.jpg');
-	}
-}
-
-.carousel-item__6{
-	.carousel-item-img{
-		background-image: url('../images/goodssmall6.jpg');
-	}
-}
-
-.carousel-item__7{
-	.carousel-item-img{
-		background-color: red;
-	}
-}
-
-.carousel-item-img{
 	position: relative;
-	height: 330px;
+	width: 92.5%;
+	padding: 0 3.75%;
+	margin-bottom: 30px;
 
 	a{	
 		position: absolute;
 		display: block;
 		height: 27px;
-		width: 100%;
+		width: 92.5%;
 		bottom: 0;
 		text-align: center;
 		background-color: rgba(0,0,0, 0.5);
@@ -768,97 +740,81 @@ nav{
 	}
 
 	&:hover a{
-			opacity: 1;
+		opacity: 1;
 	}
 }
+
+.carousel-item-price{
+	position: absolute;
+	width: 92.5%;
+	bottom: -25px;
+	text-align: center;
+	z-index: 100;
+	font-size: 14.41px;
+}
+
+.carousel-item-price-special, h4{
+	display: none;
+}
+
+.features-bgi{
+	max-width: 160px;
+	margin: auto;
+
+	img{
+		width: 100%;
+		height: auto;
+	}
+}
+
+/* recommended block */
 
 .recommended{
-	margin: 100px auto;
-	width: 1230px;
-	height: 1400px;
+	margin: 30px auto 0;
+	max-width: 1230px;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
 
-	a{
+.recommended-item{
+	position: relative;
+	margin-bottom: 2.2%;
+
+	img{
+		width: 100%;
+		height: auto;
+	}
+
+	a{	
+		position: absolute;
+		display: block;
 		color: white;
 		text-decoration: none;
-	}
-}
-.recommended-item{
-	height: 445px;
-	margin-bottom: 27px;
-}
-.recommended-item__1{
-	width: 600px;
-	float: left;
-	background-image: url('../images/goodscategory1.jpg');
-	background-position: 26% 42%;
-}
-
-.recommended-item__2{
-	width: 600px;
-	float: right;
-	background-image: url('../images/goodscategory2.jpg');
-	background-position: 100% 67%;
-}
-
-.recommended-item__3{
-	width: 782px;
-	float: left;
-	background-image: url('../images/goodscategory3.jpg');
-	background-position: 100% 67%;
-}
-
-.recommended-item__4{
-	width: 417px;
-	float: right;
-	background-image: url('../images/goodscategory4.jpg');
-	background-position: 78% 31%;
-}
-
-.recommended-item__5{
-	width: 447px;
-	float: left;
-	background-image: url('../images/goodscategory5.jpg');
-	background-position: 27% 7%;
-}
-
-.recommended-item__6{
-	width: 753px;
-	float: right;
-	background-image: url('../images/goodscategory6.jpg');
-	background-position: 49% 29%;
-}
-
-.recommended-item-content{
-	width: 100%;
-	height: 100%;
-	background-color: rgba(0,0,0, 0);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	transition: 0.5s;
-	
-	&:hover{
-		background-color: rgba(0,0,0, 0.4);
-
-		h4:before{
-			opacity: 1;
-		}
-	}
-
-	h4{
-		position: relative;
+		width: 100%;
+		height: 99%;
+		top: 0;
+		left: 0;
+		background-color: rgba(0,0,0, 0);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transition: 0.5s;
 		font-size: 33.79px;
 		text-transform: uppercase;
 		text-shadow: 0 3px 2px #000;
 		font-family: "Rajdhani Semibold";
 		letter-spacing: 4px;
-		
+
+		&:hover{
+			background-color: rgba(0,0,0, 0.4);
+		}
+
 		&:before{
 			position: absolute;
 			width: 100px;
 			padding-top: 30px;
-			left: calc(50% - 50px);
-			bottom: -48px;
+			top: calc(50% + 15px);
 			content: 'ver mais';
 			text-transform: none;
 			font-size: 19.31px;
@@ -868,13 +824,43 @@ nav{
 			opacity: 0;
 			transition: opacity 0.5s;
 		}
+
+		&:hover:before{
+			opacity: 1;
+		}
 	}
+
+	
+}
+.recommended-item__1{
+	width: 48.8%;
+}
+
+.recommended-item__2{
+	width: 48.8%;
+}
+
+.recommended-item__3{
+	width: 63.5%;
+}
+
+.recommended-item__4{
+	width: 34.1%;
+}
+
+.recommended-item__5{
+	width: 36.34%;
+}
+
+.recommended-item__6{
+	width: 61.21%;
+
 }
 
 /* GALERIA DO INSTAGRAM */
 
 .instagram-gallery{
-	margin: -50px auto 80px;
+	margin: 0px auto 10px;
 	max-width: 1600px;
 
 	h2{
@@ -884,26 +870,26 @@ nav{
 }
 
 .inst-gal-wrapper{
-	margin: 40px auto 40px;
-	width: 1230px;
+	margin: 35px auto 35px;
+	max-width: 1230px;
 	display: flex;
 	justify-content: space-between;
-
-	a{
-		color: white;
-		text-decoration: none;	
-	}
 }
 
 .inst-gal-item{
 	position: relative;
-	height: 225px;
-	width: 225px;
-	z-index: 1000;
+	max-width: 18.3%;
+	//height: auto;
+	color: white;
+
+	img{
+		width: 100%;
+		height: auto;
+	}
 
 	i{
 		position: absolute;
-		top: 70px;
+		top: 30%;
 		font-size: 30px;
 		width: 100%;
 		text-align: center;
@@ -913,7 +899,7 @@ nav{
 
 	p{
 		position: absolute;
-		top: 115px;
+		top: 50%;
 		width: 100%;
 		text-align: center;
 		font-size: 24.16px;
@@ -923,11 +909,12 @@ nav{
 		transition: 0.5s;
 	}
 
-	div{
+	a{
 		position: absolute;
+		display: block;
 		top: 0;
 		left: 0;
-		height: 100%;
+		height: 97%;
 		width: 100%;
 		transition: 0.5s;
 		background-color: rgba(0,0,0, 0);
@@ -935,7 +922,7 @@ nav{
 
 	&:hover{
 		
-		div{
+		a{
 			background-color: rgba(0,0,0, 0.5);
 		}
 
@@ -952,36 +939,37 @@ nav{
 /* SECTION "QUEM USA" */
 
 .who-uses{
-	margin: -40px auto 0;
+	margin: 30px auto 0;
 	max-width: 1600px;
 
 	h2{
-		width: 280px;
 		@include h2-bigarrow;
+		width: 280px;
 	}
 }
 
 .clients-wrapper{
 	margin: 40px auto;
-	width: 1230px;
+	max-width: 1230px;
 	display: flex;
 	justify-content: space-between;
-}
-
-.clients-wrapper-item{
-	width: 285px;
-	height: 285px;
 
 	div{
-		width: 100%;
-		height: 100%;
+		position: relative;
+		width: 23.17%;
+		height: auto;
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		background-color: rgba(0,0,0,0);
-		transition: 0.5s;
+
+		img{
+			width: 100%;
+		}
 
 		p{
+			width: 100%;
+			position: absolute;
+			left: 0;
 			text-align: center;
 			color: white;
 			font-size: 24.16px;
@@ -990,31 +978,28 @@ nav{
 			opacity: 0;
 			transition: 0.5s;
 		}
-	}
 
-	&:hover div{
-		background-color: rgba(0,0,0, 0.5);
+		div{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0,0,0,0);
+			transition: 0.5s;
+		}
 
-		p{
-			opacity: 1;
+		&:hover{
+			
+			div{
+				background-color: rgba(0,0,0, 0.5);
+			}
+
+			p{
+				opacity: 1;
+			} 
 		}
 	}
-}
-
-.clients-wrapper-item__1{
-	background-image: url('../images/client_1.jpg');
-}
-
-.clients-wrapper-item__2{
-	background-image: url('../images/client_2.jpg');
-}
-
-.clients-wrapper-item__3{
-	background-image: url('../images/client_3.jpg');
-}
-
-.clients-wrapper-item__4{
-	background-image: url('../images/client_4.jpg');
 }
 
 /* FOOTER */
@@ -1032,7 +1017,7 @@ footer{
 
 	h3{
 		position: relative;
-		width: 210px;
+		width: 17%;
 		height: 52px;
 		margin-right: 20px;
 		line-height: 52px;
@@ -1080,7 +1065,7 @@ footer{
 			margin-left: auto;
 			width: 21%;
 			font-family: "Rajdhani Semibold";
-			padding: 13.4px 52px;
+			//padding: 13.4px 52px;
 			letter-spacing: 2px;
 			border-style: none;
 			border-bottom: 4px solid #4f5052;
@@ -1116,7 +1101,7 @@ footer{
 
 	li:last-child{
 		float: right;
-		padding-right: 0;
+		padding-right: 5px;
 
 		a{
 			margin: auto;
@@ -1125,3 +1110,440 @@ footer{
 		}
 	}
 }
+
+
+/*TABLET*/ /*768px*/
+///////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+
+@media screen and(max-width: 768px ) {
+
+$tablet_width: 768px;
+
+/*HEADER SEACTION* *TABLET* */
+
+	header{
+		max-width: $tablet_width;
+	}
+
+	.logo{
+		width: 203px;
+		top: 40%;
+		left: 7%;
+		
+		h2{
+			font-size: 22.68px;
+		}
+
+		h3{
+			font-size: 15.18px;
+		}
+
+		.confira{	
+			margin-top: 27px;
+			width: 75px;
+			line-height: 20px;
+			font-size: 16.14px;
+
+			&:hover{
+				letter-spacing: 1px;
+			}
+		}
+	}
+
+	.promo-slider{
+		height: 14px;
+		line-height: 14px;
+		font-size: 10.69px;
+	}
+
+	.promo-slider-dots{
+		display: none;
+		//visibility: hidden;
+	}
+
+	.slider-wrapper{
+		height: 458px;
+	}
+
+	.slider-item{
+		height: 458;
+	}
+
+
+	/* NAVIGATION BLOCK* *TABLET* */
+
+nav{
+	max-width: $tablet_width;
+	height: 36px;
+	line-height: 30px;
+	padding: 0 12px;
+
+	h1{	
+		font-size: 25px;
+		letter-spacing: -1px;
+	 	padding-left: 90px;
+	}
+}
+
+#menu{
+	height: 530px;
+	width: 280px;
+
+	h3{
+		text-indent: 26px;
+		font-size: 18px;
+		height: 35px;
+	}
+
+	form{
+		height: 48px;
+		width: 280px;
+		padding: 6px 0px;
+
+		input[type=text]{
+			height: 33px;
+			width: 205px;
+			font-size: 14px;
+			letter-spacing: -1px;
+			text-indent: 12px;
+		}
+
+		input[type=submit]{
+			margin-right: 6px;
+			height: 33px;
+			width: 38px;
+		}
+	}
+}
+
+.frstMenu-item{
+	line-height: 41px;
+	text-indent: 25px;
+	font-size: 18px;
+}
+
+.frstMenu-item::before{
+	right: 23px;
+}
+
+.submenu li{
+	line-height: 36px;
+	font-size: 18px;
+
+	&::after{
+		width: 6px;
+		height: 6px;
+	}
+}
+
+.frstMenu-item:hover .submenu li{
+	height: 36px;
+}
+
+.fa-times{
+ 	margin: 5px 10px;
+	font-size: 20px;
+}
+
+.social-network-block{
+	position: absolute;
+	bottom: 8px;
+	right: 8px;
+	z-index: -1;
+}
+
+.social-network{
+	margin: 0px 5px 0px 0px; 
+	font-size: 15px;
+	line-height: 15px;
+}
+
+.right-bar{
+	width: 105px;
+}
+
+.login{
+	font-size: 21.66px;
+}
+
+#cart-menu{
+	width: 280px;
+	height: 530px;
+
+	h3{
+		font-size: 18px;
+		height: 36px;
+		line-height: 36px;
+	}
+
+	.cart-block{
+		margin-top: 3px;
+		margin-right: 12px;
+	}
+}
+	
+.cart-item{
+	height: 118px;
+	padding-right: 12px;
+	line-height: 30px;
+
+	.cart-item-img{
+		height: 100%;
+	}
+
+	.cart-item-name{
+		font-size: 15px;
+	}
+	
+	.cart-item-color{
+		height: 15px;
+		width: 15px;
+	}
+}
+
+.total-amount{
+	line-height: 50px;
+
+	.amount-input{
+		margin-left: 50px;
+	}
+}
+
+.continue-shopping{
+	width: 37%;
+	font-size: 18px;
+}
+
+.checkout{
+	width: 63%;
+	font-size: 18px;
+
+	i{
+		padding-left: 8px;
+	}
+}
+
+/*SECTION FEATURES "PRODUTOS EM DESTAQUE" *TABLET* */
+
+
+.features{
+	max-width: $tablet_width;
+	margin-bottom: 20px;
+
+	h2{	
+		@include h2-bigarrow;
+		width: 360px;
+		font-size: 20px;
+	}
+}
+
+.carousel{
+	position: relative;
+	max-width: $tablet_width;
+	overflow: hidden;
+
+	&:after, &:before{
+		position: absolute;
+		content: '';
+		height: 100%;
+		width: 8%;
+		top: 0;
+		z-index: 10;
+	}
+	
+	&:after{
+		right: 0;
+		background: linear-gradient(to right, rgba(255,255,255, 0.0) 50%, rgba(255,255,255, 0.9));
+	}
+
+	&:before{
+		left: 0;
+		background: linear-gradient(to right, rgba(255,255,255, 0.9), rgba(255,255,255, 0.0) 50%);
+	}
+}
+
+.owl-prev{
+	left: 15px;
+	z-index: 100;
+	border-color: black;
+}
+
+.owl-next{
+	right: 15px;
+	z-index: 100;
+	border-color: black;
+}
+/*************************/
+
+.carousel-wrapper{
+	width: 128% !important;
+	margin-left: -14.3%;
+	padding-bottom: 20px;
+}
+
+.carousel-item{
+	margin-bottom: 80px;
+	margin-top: 30px;
+	
+	h4{
+		position: absolute;
+		left: -7px;
+		top: 2px;
+		transform: rotate(320deg);
+		display: block;
+		height: 15px;
+		width: 54px;
+		background-color: #4f4f4f;
+		text-align: center;
+		line-height: 17px;
+		font-family: "Rajdhani Bold";
+		font-size: 15px;
+		color: white;
+		
+		&:before{
+			content: '';
+			position: absolute;
+			height: 0;
+			left: -1px;
+		    top: -1px;
+		    border-width: 7.5px 6.555px;
+		    border-style: solid;
+		    border-color:  white transparent   transparent white;
+		}
+
+		&:after{
+			content: '';
+			position: absolute;
+			height: 0;
+			width: 0;
+			right: -1px;
+			border-width: 7.5px 6px ;
+			border-style: solid;
+		    border-color: transparent #fff transparent transparent;
+		}
+	}
+}
+
+.carousel-item-price{
+	font-size: 15px;
+}
+
+.carousel-item-price-special{
+	position: absolute;
+	display: block;
+	width: 92.5%;
+	text-align: center;
+	font-size: 17px;
+	bottom: -45px;
+	font-family: "Rajdhani Semibold";
+}
+
+.crossedout-font{
+	text-decoration: line-through;
+	color: #888888;
+}
+
+/* recommended block */
+
+.recommended-item{
+	
+	margin: auto;
+	max-width: 95%;
+
+	a{
+		font-size: 20.03px;
+	}
+
+	&:before{
+		font-size: 11.5px;
+		padding-top: 15px;
+	}
+}
+
+
+/* GALERIA DO INSTAGRAM */
+
+.instagram-gallery{
+	max-width: $tablet_width;
+
+	h2{
+		@include h2-bigarrow;
+		width: 320px;
+		font-size: 18px;
+	}
+}
+
+.inst-gal-wrapper{
+	margin: 15px 2% 15px;
+	max-width: 730px;
+}
+
+.inst-gal-item{
+
+	i{
+		font-size: 18px;
+	}
+
+	p{
+		font-size: 14.5px;
+	}
+
+	a{
+		position: absolute;
+		display: block;
+		top: 0;
+		left: 0;
+		height: 97%;
+		width: 100%;
+		transition: 0.5s;
+		background-color: rgba(0,0,0, 0);
+	}
+
+	&:hover{
+		
+		a{
+			background-color: rgba(0,0,0, 0.5);
+		}
+
+		i{
+			opacity: 1;
+		}
+
+		p{
+			opacity: 1;
+		}
+	}
+}
+
+/* SECTION "QUEM USA" */
+
+.who-uses{
+	margin: 0px auto 0px;
+	max-width: $tablet_width;
+
+	h2{
+		@include h2-bigarrow;
+		width: 230px;
+		font-size: 18px;
+	}
+}
+
+.clients-wrapper{
+	max-width: 730px;
+	margin: 20px 2%;
+
+	div{
+
+		p{
+			font-size: 15px;
+		}
+	}
+}
+
+
+
+
+
+
+}//////
