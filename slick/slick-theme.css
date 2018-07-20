@@ -181,6 +181,21 @@
     }
 }
 
+@media screen and (max-width: 320px) {
+    .slick-dots li{ 
+        width: 11px;
+        height: 11px;
+        -webkit-box-shadow: 0px 0px 1px black;
+        box-shadow: 0px 0px 2px black;
+        margin: 2px;
+    }
+
+    .slick-dots li button{
+        width: 11px;
+        height: 11px;
+    }
+}
+
 .slick-dots li button:hover,
 .slick-dots li button:focus
 {

@@ -1,5 +1,4 @@
 @charset "UTF-8";
-/*PHONE*/
 @font-face {
   font-family: "Courier New";
   src: url("../fonts/cour.ttf"); }
@@ -20,9 +19,6 @@
   from {
     width: 0;
     opacity: 0; }
-  /* @media screen and (min-width: 769px) {
-		to{width: 595px; opacity: 1;}
-	} */
   @media screen and (max-width: 768px) {
     to {
       width: 280px;
@@ -32,9 +28,6 @@
   from {
     height: 0;
     opacity: 0; }
-  /* @media screen and (min-width: 769px) {
-		to{height: 660px; opacity: 1;}
-	} */
   @media screen and (max-width: 768px) {
     to {
       height: 530px;
@@ -58,7 +51,7 @@
 body {
   font-family: 'Rajdhani'; }
 
-/*HEADER SEACTION*/
+/*HEADER SEACTION* *DESKTOP*/
 header {
   position: relative;
   margin: auto;
@@ -69,7 +62,7 @@ header {
   width: 315px;
   top: 38%;
   left: 14%;
-  z-index: 1000;
+  z-index: 500;
   text-transform: uppercase;
   color: black;
   text-align: center; }
@@ -175,7 +168,7 @@ header {
 .slider-item__5 {
   background-image: url("../images/good5.jpg"); }
 
-/* NAVIGATION BLOCK*/
+/* NAVIGATION BLOCK* *DESKTOP*/
 nav {
   position: relative;
   height: 45px;
@@ -499,7 +492,7 @@ nav {
   .checkout i {
     padding-left: 40px; }
 
-/*SECTION FEATURES "PRODUTOS EM DESTAQUE" */
+/*SECTION FEATURES "PRODUTOS EM DESTAQUE"  *DESKTOP*/
 .features {
   margin: auto;
   max-width: 1600px;
@@ -612,7 +605,7 @@ nav {
     width: 100%;
     height: auto; }
 
-/* recommended block */
+/* recommended block * *DESKTOP*/
 .recommended {
   margin: 30px auto 0;
   max-width: 1230px;
@@ -681,7 +674,7 @@ nav {
 .recommended-item__6 {
   width: 61.21%; }
 
-/* GALERIA DO INSTAGRAM */
+/* GALERIA DO INSTAGRAM * *DESKTOP*/
 .instagram-gallery {
   margin: 0px auto 10px;
   max-width: 1600px; }
@@ -709,22 +702,29 @@ nav {
       background-image: url("../backgrounds/bigarrowright.png");
       right: 0; }
 
+.inst-gal-carousel {
+  max-width: 1230px;
+  margin: auto; }
+
 .inst-gal-wrapper {
   margin: 35px auto 35px;
-  max-width: 1230px;
+  width: 100%;
   display: flex;
   justify-content: space-between; }
 
 .inst-gal-item {
   position: relative;
-  max-width: 18.3%;
+  width: 92.5%;
+  margin: 0 3.75%;
+  height: auto;
   color: white; }
   .inst-gal-item img {
-    width: 100%;
-    height: auto; }
+    max-width: 100%;
+    max-height: auto; }
   .inst-gal-item i {
     position: absolute;
     top: 30%;
+    left: 0%;
     font-size: 30px;
     width: 100%;
     text-align: center;
@@ -733,6 +733,7 @@ nav {
   .inst-gal-item p {
     position: absolute;
     top: 50%;
+    left: 0%;
     width: 100%;
     text-align: center;
     font-size: 24.16px;
@@ -743,9 +744,9 @@ nav {
   .inst-gal-item a {
     position: absolute;
     display: block;
-    top: 0;
+    bottom: 0;
     left: 0;
-    height: 97%;
+    height: 100%;
     width: 100%;
     transition: 0.5s;
     background-color: rgba(0, 0, 0, 0); }
@@ -756,7 +757,7 @@ nav {
   .inst-gal-item:hover p {
     opacity: 1; }
 
-/* SECTION "QUEM USA" */
+/* SECTION "QUEM USA" * *DESKTOP*/
 .who-uses {
   margin: 30px auto 0;
   max-width: 1600px; }
@@ -784,21 +785,27 @@ nav {
       background-image: url("../backgrounds/bigarrowright.png");
       right: 0; }
 
-.clients-wrapper {
+.clients-carousel {
   margin: 40px auto;
-  max-width: 1230px;
+  max-width: 1230px; }
+
+.clients-wrapper {
+  margin: auto;
+  width: 100%;
   display: flex;
   justify-content: space-between; }
-  .clients-wrapper div {
+  .clients-wrapper .clients-wrapper-item {
     position: relative;
-    width: 23.17%;
+    width: 92.5%;
+    margin: 0 3.75%;
     height: auto;
     display: flex;
     justify-content: center;
     align-items: center; }
-    .clients-wrapper div img {
-      width: 100%; }
-    .clients-wrapper div p {
+    .clients-wrapper .clients-wrapper-item img {
+      max-width: 100%;
+      height: auto; }
+    .clients-wrapper .clients-wrapper-item p {
       width: 100%;
       position: absolute;
       left: 0;
@@ -809,7 +816,7 @@ nav {
       letter-spacing: 1px;
       opacity: 0;
       transition: 0.5s; }
-    .clients-wrapper div div {
+    .clients-wrapper .clients-wrapper-item div {
       position: absolute;
       top: 0;
       left: 0;
@@ -817,12 +824,12 @@ nav {
       height: 100%;
       background-color: rgba(0, 0, 0, 0);
       transition: 0.5s; }
-    .clients-wrapper div:hover div {
+    .clients-wrapper .clients-wrapper-item:hover div {
       background-color: rgba(0, 0, 0, 0.5); }
-    .clients-wrapper div:hover p {
+    .clients-wrapper .clients-wrapper-item:hover p {
       opacity: 1; }
 
-/* FOOTER */
+/* FOOTER * *DESKTOP*/
 footer {
   margin: 50px auto;
   max-width: 1600px; }
@@ -904,6 +911,9 @@ footer {
       margin-left: 8px;
       font-size: 25px; }
 
+.small-footer {
+  display: none; }
+
 /*TABLET*/
 /*768px*/
 @media screen and (max-width: 768px) {
@@ -944,7 +954,9 @@ footer {
     nav h1 {
       font-size: 25px;
       letter-spacing: -1px;
-      padding-left: 90px; }
+      padding-left: 0;
+      padding-left: 11vw;
+      white-space: nowrap; }
   #menu {
     height: 530px;
     width: 280px; }
@@ -1092,27 +1104,28 @@ footer {
     margin-top: 30px; }
     .carousel-item h4 {
       position: absolute;
-      left: -7px;
+      left: 0px;
       top: 2px;
-      transform: rotate(320deg);
+      transform: rotate(315deg);
       display: block;
       height: 15px;
-      width: 54px;
+      width: 40px;
       background-color: #4f4f4f;
       text-align: center;
       line-height: 17px;
       font-family: "Rajdhani Bold";
       font-size: 15px;
-      color: white; }
+      color: white;
+      box-shadow: -6px 7px 11px grey; }
       .carousel-item h4:before {
         content: '';
         position: absolute;
         height: 0;
-        left: -1px;
-        top: -1px;
-        border-width: 7.5px 6.555px;
-        border-style: solid;
-        border-color: white transparent   transparent white; }
+        width: 0;
+        left: -14.5px;
+        top: 0px;
+        border-top: 15px solid transparent;
+        border-right: 15px solid #4f4f4f; }
       .carousel-item h4:after {
         content: '';
         position: absolute;
@@ -1131,11 +1144,12 @@ footer {
     text-align: center;
     font-size: 17px;
     bottom: -45px;
-    font-family: "Rajdhani Semibold"; }
+    font-family: "Rajdhani Semibold";
+    white-space: nowrap; }
   .crossedout-font {
     text-decoration: line-through;
     color: #888888; }
-  /* recommended block */
+  /* recommended block * *TABLET*/
   .recommended-item {
     margin: auto;
     max-width: 95%; }
@@ -1144,7 +1158,7 @@ footer {
     .recommended-item:before {
       font-size: 11.5px;
       padding-top: 15px; }
-  /* GALERIA DO INSTAGRAM */
+  /* GALERIA DO INSTAGRAM * *TABLET*/
   .instagram-gallery {
     max-width: 768px; }
     .instagram-gallery h2 {
@@ -1171,19 +1185,23 @@ footer {
       .instagram-gallery h2:after {
         background-image: url("../backgrounds/bigarrowright.png");
         right: 0; }
+  .inst-gal-carousel {
+    max-width: 768px;
+    margin: auto; }
   .inst-gal-wrapper {
     margin: 15px 2% 15px;
-    max-width: 730px; }
+    width: 100%; }
   .inst-gal-item i {
     font-size: 18px; }
   .inst-gal-item p {
-    font-size: 14.5px; }
+    line-height: 15px;
+    font-size: 2.5vw; }
   .inst-gal-item a {
     position: absolute;
     display: block;
     top: 0;
     left: 0;
-    height: 97%;
+    height: 100%;
     width: 100%;
     transition: 0.5s;
     background-color: rgba(0, 0, 0, 0); }
@@ -1193,7 +1211,7 @@ footer {
     opacity: 1; }
   .inst-gal-item:hover p {
     opacity: 1; }
-  /* SECTION "QUEM USA" */
+  /* SECTION "QUEM USA" * *TABLET*/
   .who-uses {
     margin: 0px auto 0px;
     max-width: 768px; }
@@ -1225,4 +1243,331 @@ footer {
     max-width: 730px;
     margin: 20px 2%; }
     .clients-wrapper div p {
-      font-size: 15px; } }
+      font-size: 15px; }
+  /* FOOTER *TABLET* */
+  footer {
+    margin: 40px auto;
+    max-width: 768px; }
+  .newsletter {
+    max-width: 96%;
+    margin: auto 2%; }
+    .newsletter h3 {
+      height: 30px;
+      margin-right: 10px;
+      line-height: 30px;
+      font-size: 2vw; }
+      .newsletter h3:after {
+        right: -8px;
+        border-top: 15px solid transparent;
+        border-left: 8px solid black;
+        border-bottom: 15px solid transparent; }
+    .newsletter form input {
+      font-size: 2vw;
+      height: 30px; }
+  .gallery-links {
+    margin-top: 36px;
+    width: 100%; }
+    .gallery-links ul {
+      margin-left: 1%;
+      max-width: 768px; }
+    .gallery-links li {
+      padding-right: 2.3%; }
+      .gallery-links li a {
+        font-size: 2vw; }
+    .gallery-links li:last-child {
+      padding-right: 0;
+      margin-right: 3.25%;
+      width: 50px; }
+      .gallery-links li:last-child a {
+        margin-left: 1%;
+        font-size: 16px; }
+  .small-footer {
+    display: none; } }
+
+/*PHONE*/
+/*320px*/
+@media screen and (max-width: 320px) {
+  body {
+    max-width: 320px;
+    margin: auto;
+    position: relative; }
+  header {
+    top: 50px;
+    left: 0;
+    max-width: 320px; }
+  nav {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50px;
+    line-height: 50px;
+    padding: 0;
+    justify-content: space-between; }
+    nav .fa-bars {
+      font-size: 16px;
+      margin-left: 12px; }
+    nav h1 {
+      font-size: 9.2vw;
+      padding: 0; }
+    nav .login {
+      display: none; }
+    nav .right-bar {
+      width: 35px;
+      margin-right: 7px; }
+  #menu {
+    width: 100%;
+    border-right: none;
+    border-bottom: none;
+    height: 315px; }
+    #menu h3 {
+      font-size: 15px;
+      text-indent: 40px;
+      text-align: center;
+      line-height: 35px; }
+    #menu form {
+      height: 40px;
+      width: 100%;
+      padding: 0px; }
+      #menu form input[type=text] {
+        height: 30px;
+        width: 70%;
+        margin: 5px 0 5px;
+        font-size: 12px; }
+      #menu form input[type=submit] {
+        height: 30px;
+        width: 32px;
+        margin: 5px; }
+  .fa-times {
+    font-size: 15px;
+    margin-top: 10px;
+    margin-right: 15px; }
+  .frstMenu {
+    z-index: 600; }
+  .frstMenu-item {
+    line-height: 20px;
+    text-indent: 10px;
+    font-size: 13px;
+    z-index: 100;
+    background-color: white; }
+  .submenu li {
+    line-height: 20px; }
+  .frstMenu-item:hover .submenu li {
+    height: 20px; }
+  .social-network-block {
+    bottom: 0px;
+    right: 0px; }
+  .social-network {
+    margin: 1px 5px;
+    font-size: 15px;
+    line-height: 15px; }
+  #cart-menu {
+    width: 100%;
+    border: none;
+    height: 280px; }
+    #cart-menu .cart-block {
+      margin-top: 10px;
+      margin-right: 7px; }
+    #cart-menu h3 {
+      height: 50px;
+      line-height: 50px;
+      font-size: 15px;
+      text-align: center; }
+  .cart-item {
+    height: 80px;
+    padding: 0;
+    line-height: 13px; }
+    .cart-item .cart-item-img img {
+      max-height: 100%;
+      width: auto; }
+    .cart-item .cart-item-name {
+      margin: 2px 13px;
+      font-size: 12px; }
+    .cart-item .cart-item-color {
+      margin: 2px 13px;
+      width: 20px;
+      height: 20px; }
+    .cart-item .cart-item-quantity {
+      font-size: 15px;
+      height: 20px;
+      line-height: 22px; }
+    .cart-item .cart-item-btn {
+      margin: 2px;
+      width: 20px;
+      height: 20px; }
+    .cart-item .cart-item-btn_delete {
+      margin-left: 13px; }
+    .cart-item .cart-item-btn_close {
+      font-size: 12px;
+      margin-top: 5px; }
+    .cart-item .cart-item-price {
+      font-size: 20px;
+      margin-top: 5px; }
+  .total-amount {
+    font-size: 20px;
+    height: 25px;
+    line-height: 26px;
+    bottom: 27px;
+    text-align: center; }
+    .total-amount .amount-input {
+      margin-left: 30px; }
+  .continue-shopping {
+    height: 30px;
+    width: 50%;
+    font-size: 18px;
+    line-height: 15px;
+    padding: 0; }
+  .checkout {
+    height: 30px;
+    width: 50%;
+    font-size: 18px;
+    line-height: 30px; }
+  /*HEADER SECTION* *PHONE*/
+  .promo-slider-dots {
+    display: none; }
+  .slider-wrapper {
+    height: 195px; }
+  .logo {
+    top: 50px;
+    left: 13px;
+    width: 130px;
+    z-index: 10; }
+    .logo h2 {
+      font-size: 14px; }
+    .logo h3 {
+      font-size: 11px; }
+    .logo .confira {
+      margin-top: 12px;
+      width: 75px;
+      height: 23px;
+      font-size: 16px;
+      line-height: 23px; }
+  /*SECTION FEATURES "PRODUTOS EM DESTAQUE"* *PHONE*/
+  .features {
+    max-width: 320px;
+    margin-top: 50px; }
+    .features h2 {
+      font-size: 5.6vw;
+      width: 90%; }
+      .features h2:before, .features h2:after {
+        width: 14%;
+        background-size: contain; }
+  .carousel {
+    margin: 0px auto; }
+  .owl-prev, .owl-next {
+    display: none; }
+  .features-bgi {
+    margin-top: -50px;
+    max-width: 130px; }
+  .recommended-item {
+    width: 100%; }
+  /* SECTION "GALERIA DO INSTAGRAM" * *PHONE*/
+  .instagram-gallery h2 {
+    width: 90%;
+    font-size: 5.6vw; }
+    .instagram-gallery h2:before, .instagram-gallery h2:after {
+      width: 14%;
+      background-size: contain; }
+  .inst-gal-carousel {
+    position: relative;
+    max-width: 320px;
+    overflow: hidden; }
+    .inst-gal-carousel:before, .inst-gal-carousel:after {
+      position: absolute;
+      content: '';
+      height: 100%;
+      width: 25%;
+      top: 0;
+      z-index: 10; }
+    .inst-gal-carousel:before {
+      left: 0;
+      background: linear-gradient(to right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0)); }
+    .inst-gal-carousel:after {
+      right: 0;
+      background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.9)); }
+  .inst-gal-wrapper {
+    width: 150% !important;
+    margin-left: -25%; }
+  .who-uses h2 {
+    width: 70%;
+    font-size: 5.6vw; }
+    .who-uses h2:before, .who-uses h2:after {
+      width: 14vw;
+      background-size: contain; }
+  /* SECTION "QUEM USA" * *PHONE*/
+  .clients-carousel {
+    position: relative;
+    max-width: 320px;
+    overflow: hidden;
+    height: auto; }
+    .clients-carousel:before, .clients-carousel:after {
+      position: absolute;
+      content: '';
+      height: 100%;
+      width: 17%;
+      top: 0;
+      z-index: 10; }
+    .clients-carousel:before {
+      left: 0;
+      background: linear-gradient(to right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0)); }
+    .clients-carousel:after {
+      right: 0;
+      background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.9)); }
+  .clients-wrapper {
+    width: 176% !important;
+    margin-left: -38%; }
+  /* FOOTER * *PHONE*/
+  footer {
+    max-width: 320px;
+    margin-bottom: 0; }
+  .newsletter {
+    width: 100%;
+    margin: 0;
+    height: 200px;
+    display: block; }
+    .newsletter h3 {
+      width: 93.4vw;
+      display: block;
+      margin: 0;
+      margin-left: 3.3vw;
+      margin-right: 3.3vw;
+      height: 40px;
+      line-height: 40px;
+      font-size: 18.23px;
+      margin-bottom: 6px; }
+      .newsletter h3:after {
+        display: none; }
+    .newsletter form {
+      width: 93.4vw;
+      display: block;
+      margin: 0;
+      padding: 0;
+      margin-left: 3.3vw;
+      margin-right: 3.3vw; }
+      .newsletter form input[type=text],
+      .newsletter form input[type=email],
+      .newsletter form input[type=submit] {
+        width: 100%;
+        margin-right: 0px;
+        height: 40px;
+        padding: 0;
+        font-size: 18.23px;
+        margin-bottom: 6px; }
+  .gallery-links {
+    display: none; }
+  .small-footer {
+    font-size: 0;
+    display: block;
+    height: 48px;
+    line-height: 48px;
+    text-align-last: center;
+    background-color: #f1f1f1; }
+    .small-footer .part1, .small-footer .part3, .small-footer .part2 {
+      font-size: 18px;
+      color: black;
+      font-family: "Rajdhani Bold"; }
+    .small-footer .part2 {
+      color: #00a1b0; }
+    .small-footer .part4 {
+      font-size: 14px;
+      color: #c5c4c5; } }
